@@ -1,0 +1,11 @@
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\bin\Debug\IFAP_FINAL.exe.config
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\bin\Debug\IFAP_FINAL.exe
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\bin\Debug\IFAP_FINAL.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\PresntationLayer.csproj.AssemblyReference.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\PresntationLayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\IFAP_FINAL.Product.resources
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\IFAP_FINAL.Properties.Resources.resources
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\PresntationLayer.csproj.GenerateResource.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\PresntationLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\IFAP_FINAL.exe
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP_FINAL\obj\Debug\IFAP_FINAL.pdb

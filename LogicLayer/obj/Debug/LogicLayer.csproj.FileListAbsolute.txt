@@ -1,0 +1,14 @@
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\EntityLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\obj\Debug\LogicLayer.csproj.AssemblyReference.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\LogicLayer.dll.config
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\LogicLayer\bin\Debug\EntityLayer.dll.config

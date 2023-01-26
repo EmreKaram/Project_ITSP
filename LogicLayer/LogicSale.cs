@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using EntityLayer;
 using DataAccessLayer;
 using System.Windows.Forms;
+using MySqlConnector;
 
 namespace LogicLayer
 {
@@ -48,55 +49,6 @@ namespace LogicLayer
             }
             return false;
         }
-        public static String LogicLayerSaleMakeSale(ListView.ListViewItemCollection listView)
-
-            MySqlConnection mySqlConnection = new MySqlConnection(CONNECTION_STRING);
-            mySqlConnection.Open();
-            List<string> queryList = new List<string>();
-            bool failed = false;
-
-            foreach (ListViewItem item in listView)
-            {
-                if (failed) break;
-
-                string selectQuery = "select ProductQuantity from Product where ProductID = " + item.SubItems[0].Text;
-                MySqlCommand selectCommand = new MySqlCommand(selectQuery, mySqlConnection);
-                using (MySqlDataReader reader = selectCommand.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        int pq = Int32.Parse(reader.GetString(0));
-                        int iq = Int32.Parse(item.SubItems[2].Text);
-                        int total = (pq - iq);
-                        if (total < 0)
-                        {
-                            MessageBox.Show(item.SubItems[1].Text + " İsimli ürün'den elinizde yeteri kadar yoktur! ", "Stok yok!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            failed = true;
-                            break;
-                        }
-                        else
-                        {
-                            string updateQuery = "UPDATE Product SET ProductQuantity = '" + total + "' WHERE ProductID = " + item.SubItems[0].Text;
-                            queryList.Add(updateQuery);
-
-                        }
-                    }
-                }
-            }
-            if (!failed)
-            {
-                foreach (String query in queryList)
-                {
-                    MySqlCommand updateCmd = new MySqlCommand(query, mySqlConnection);
-                    updateCmd.ExecuteNonQuery();
-                }
-
-                UpdateSalesData();
-                lviBasket.Items.Clear();
-                mySqlConnection.Close();
-            }
-        }
-        UpdateBasketCost();
-        lviCustomer.Items.Clear();
     }
 }
+

@@ -40,7 +40,7 @@ namespace IFAP_FINAL
             if (!doesExistInCart)
             {
                 string SaleAmount = Interaction.InputBox("Satış Adeti: ", "Satış Ekranı", "");
-                if(!string.IsNullOrWhiteSpace(SaleAmount) && int.TryParse(SaleAmount, out int value))
+                if (!string.IsNullOrWhiteSpace(SaleAmount) && int.TryParse(SaleAmount, out int value))
                 {
                     string pName = dgvProduct.SelectedRows[0].Cells[1].Value.ToString();
                     string pPrice = dgvProduct.SelectedRows[0].Cells[3].Value.ToString();
@@ -102,7 +102,7 @@ namespace IFAP_FINAL
 
             }
 
-                DialogResult dialog = MessageBox.Show("Satışı Onaylıyor musunuz ?", "Satışı Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //DialogResult dialog = MessageBox.Show("Satışı Onaylıyor musunuz ?", "Satışı Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             //if (lviBasket.Items.Count == 0)
             //{
             //    MessageBox.Show("Sepet boş!", "Ürün seçiniz.", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);

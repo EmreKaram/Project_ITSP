@@ -17,7 +17,7 @@ namespace LogicLayer
         }
         public static int LogicLayerUserAdd(EntityUser user)
         {
-            if (user.UserName!="")
+            if (user.UserName!="" && DalUser.findByUserName(user.UserName) == null)
             {
                 return DalUser.AddUser(user);
             }
@@ -51,6 +51,18 @@ namespace LogicLayer
         public static List<EntityUser> LogicLayerSearchUser(string UserName)
         {
             return DalUser.SearchUser(UserName);
+        }
+        public static EntityUser Login(string username, string password)
+        {
+            EntityUser user = DalUser.findByUserName(username);
+            if (user != null)
+            {
+                if (user.UserPassword == password)
+                {
+                    return user;
+                }
+            }
+            return null;
         }
     }
 }

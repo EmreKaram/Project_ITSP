@@ -17,7 +17,7 @@ namespace DataAccessLayer
 
             SqlCommand cmd1 = new SqlCommand("Select * from [User]", Connection.connection);
 
-            if (cmd1.Connection.State!=ConnectionState.Open)
+            if (cmd1.Connection.State != ConnectionState.Open)
             {
                 cmd1.Connection.Open();
             }
@@ -38,7 +38,7 @@ namespace DataAccessLayer
         public static int AddUser(EntityUser user)
         {
             SqlCommand cmd2 = new SqlCommand("insert into [User] (UserName,UserPassword,UserType) VALUES (@P1,@P2,@P3)", Connection.connection);
-            if ( cmd2.Connection.State != ConnectionState.Open)
+            if (cmd2.Connection.State != ConnectionState.Open)
             {
                 cmd2.Connection.Open();
             }
@@ -48,7 +48,7 @@ namespace DataAccessLayer
             return cmd2.ExecuteNonQuery();
         }
 
-        public static bool DeleteUser (int u)
+        public static bool DeleteUser(int u)
         {
             SqlCommand cmd3 = new SqlCommand("Delete from [User] where ID=@P1", Connection.connection);
             if (cmd3.Connection.State != ConnectionState.Open)
@@ -60,7 +60,7 @@ namespace DataAccessLayer
         }
         public static bool UpdateUser(EntityUser ent)
         {
-            SqlCommand cmd4 = new SqlCommand("Update [User] SET UserName=@P1, UserPassword=@P2,UserType=@P3 WHERE ID=@P4",Connection.connection);
+            SqlCommand cmd4 = new SqlCommand("Update [User] SET UserName=@P1, UserPassword=@P2,UserType=@P3 WHERE ID=@P4", Connection.connection);
             if (cmd4.Connection.State != ConnectionState.Open)
             {
                 cmd4.Connection.Open();
@@ -94,5 +94,30 @@ namespace DataAccessLayer
             dr.Close();
             return list;
         }
+        public static EntityUser findByUserName(string UserName)
+        {
+            SqlCommand cmd6 = new SqlCommand("Select * from [User] WHERE UserName = @P1", Connection.connection);
+            if (cmd6.Connection.State != ConnectionState.Open)
+            {
+                cmd6.Connection.Open();
+            }
+            cmd6.Parameters.AddWithValue("@P1", UserName);
+            SqlDataReader dr = cmd6.ExecuteReader();
+
+
+            while (dr.Read())
+            {
+                if (dr["ID"] != DBNull.Value)
+                {
+                    EntityUser user = new EntityUser();
+                    user = EntityUser.From(dr);
+                    dr.Close();
+                    return user;
+                }
+            }
+            dr.Close();
+            return null;
+        }
+
     }
 }

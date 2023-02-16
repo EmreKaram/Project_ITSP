@@ -20,6 +20,11 @@
       "ProjectGuid": "073d51ce-00b8-4e48-9a7e-436032cd3b0e",
       "DisplayName": "PresentationLayer",
       "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 4

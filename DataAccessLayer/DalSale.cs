@@ -50,7 +50,7 @@ namespace DataAccessLayer
 
         public static int AddSale(EntitySale sale)
         {
-            SqlCommand cmd3 = new SqlCommand("insert into Sales (SalesProductID,SalesProductName,SalesProductCompany,SalesQuantitySold,SalesCustomerId,SalesTotalEarning) VALUES (@P4,@P5,@P6,@P7,@P8,@P9)",Connection.connection);
+            SqlCommand cmd3 = new SqlCommand("insert into Sales (SalesProductID,SalesProductName,SalesProductCompany,SalesQuantitySold,SalesCustomerID,SalesTotalEarning) VALUES (@P4,@P5,@P6,@P7,@P8,@P9)",Connection.connection);
             if (cmd3.Connection.State != ConnectionState.Open)
             {
                 cmd3.Connection.Open();

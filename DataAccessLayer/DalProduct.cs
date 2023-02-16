@@ -121,7 +121,7 @@ namespace DataAccessLayer
                 entityProduct.Price = int.Parse(reader["Price"].ToString());
                 entityProduct.Quantity = int.Parse(reader["Quantity"].ToString());
                 entityProduct.Company = reader["Company"].ToString();
-
+                reader.Close();
                 return entityProduct;
 
             }

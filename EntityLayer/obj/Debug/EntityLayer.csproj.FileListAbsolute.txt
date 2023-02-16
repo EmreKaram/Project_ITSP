@@ -4,3 +4,10 @@ C:\Users\Emre\Desktop\Code\IFAP_FINAL\EntityLayer\obj\Debug\EntityLayer.csproj.C
 C:\Users\Emre\Desktop\Code\IFAP_FINAL\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\Emre\Desktop\Code\IFAP_FINAL\EntityLayer\obj\Debug\EntityLayer.pdb
 C:\Users\Emre\Desktop\Code\IFAP_FINAL\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\Emre\Desktop\Code\IFAP_FINAL\IFAP-Final\EntityLayer\obj\Debug\EntityLayer.pdb

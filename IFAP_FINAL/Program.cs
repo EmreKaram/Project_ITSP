@@ -16,7 +16,7 @@ namespace IFAP_FINAL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new User());
+            Application.Run(new Login_SignUpcs());
         }
     }
 }

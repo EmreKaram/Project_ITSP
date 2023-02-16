@@ -22,7 +22,21 @@ namespace IFAP_FINAL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            EntityUser user = LogicUser.Login(txtLoginUsername.Text, txtLoginPassword.Text);
+            if (user != null)
+            {
+                if (user.UserType == "user")
+                {
+                    User userForm = new User();
+                    userForm.Show();
+                } 
+                else
+                {
+                    Admin adminForm = new Admin();
+                    adminForm.Show();
+
+                }
+            }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)

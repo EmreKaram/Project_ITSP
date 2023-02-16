@@ -37,6 +37,7 @@ namespace IFAP_FINAL
         {
             string pID = dgvProduct.SelectedRows[0].Cells[0].Value.ToString();
             bool doesExistInCart = LogicSale.LogicLayerSaleCartContains(pID, lviBasket.Items);
+
             if (!doesExistInCart)
             {
                 string SaleAmount = Interaction.InputBox("Satış Adeti: ", "Satış Ekranı", "");
@@ -48,6 +49,7 @@ namespace IFAP_FINAL
                     string[] row = { pID, pName, SaleAmount, pPrice, pCompany };
                     var ListViewItem = new ListViewItem(row);
                     lviBasket.Items.Add(ListViewItem);
+                    lblTotalPrice.Text = LogicSale.calculateTotalPrice(2,3, lviBasket.Items).ToString();
                 }
                 else
                 {
@@ -94,36 +96,34 @@ namespace IFAP_FINAL
                 MessageBox.Show("Lütfen müşteri seçiniz!", "Müşteri seçin", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-
-            DialogResult dialog = MessageBox.Show("Satışı Onaylıyor musunuz ?", "Satışı Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dialog == DialogResult.Yes)
+            DialogResult dialogsale = MessageBox.Show("Satışı Onaylıyor musunuz ?", "Satışı Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialogsale == DialogResult.Yes)
             {
 
+                EntitySale sale = new EntitySale();
+                int saleResult = 0;
+                foreach(ListViewItem item in lviBasket.Items)
+                {
+                    sale.SalesProductId = int.Parse(item.SubItems[0].Text);
+                    sale.SalesProductName = item.SubItems[1].Text;
+                    sale.SalesProductCompany = item.SubItems[4].Text;
+                    sale.SalesCustomerId = int.Parse(lviCustomer.Items[0].SubItems[0].Text);
+                    sale.SalesTotalEarning = int.Parse(lblTotalPrice.Text);
+                    sale.SalesQuantitySold = int.Parse(item.SubItems[2].Text);
+                    saleResult = LogicSale.makeSale(sale);
+                }
+
+                if(saleResult == 0)
+                {
+                    MessageBox.Show("Satış başarılı!");
+                } else if (saleResult == -1)
+                {
+                    MessageBox.Show("Yeteri kadar ürün yok!"); 
+
+                }
             }
 
-            //DialogResult dialog = MessageBox.Show("Satışı Onaylıyor musunuz ?", "Satışı Onayla", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (lviBasket.Items.Count == 0)
-            //{
-            //    MessageBox.Show("Sepet boş!", "Ürün seçiniz.", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //if (lviCustomer.Items.Count == 0)
-            //{
-            //    MessageBox.Show("Müşteri seçilmedi!", "Müşteri seçiniz.", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            //    return;
-            //}
 
-            //EntitySale sale = new EntitySale();
-
-            //sale.SalesProductId = int.Parse(lviBasket.Items[0].SubItems[0].Text);
-            //sale.SalesProductName = lviBasket.Items[0].SubItems[1].Text;
-            //sale.SalesProductCompany = lviBasket.Items[0].SubItems[4].Text;
-            //sale.SalesCustomerId = int.Parse(lviCustomer.Items[0].SubItems[0].Text);
-            //sale.SalesTotalEarning = int.Parse(lblTotalPrice.Text);
-            //sale.SalesQuantitySold = 1;
-            //LogicSale.LogicLayerSaleAdd(sale);
-            //MessageBox.Show("Satış başarılı!");
         }
 
         private void lviBasket_DoubleClick(object sender, EventArgs e)
